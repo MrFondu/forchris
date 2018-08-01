@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>10 Questions</title>
+  </head>
+  <body>
+
+    <script>
+
+        var question = [
+            { q: "Is a chicken a bird?", a: "t" },
+            { q: "is a goat a fish?", a: "f" }]
+            
+
+
+        var questionArray=[];
+        
+        for (var i =0; i < question.length; i++){
+            questionArray.push(question[i].q)
+        }
+        
+        var questioncounter = 0;
+        
+        renderquestion(questioncounter);
+        
+        function renderquestion(q)
+        {
+            console.log (questionArray[q]);
+        }
+        
+        document.onkeyup = function(event){
+        var press = event.key
+            if (press === question[questioncounter].a)
+            {
+                console.log ("Yea, you got it right!")
+            }
+    
+            else {
+                console.log ("Oops, that was wrong.")
+            }
+            questioncounter++;
+            if (questioncounter < question.length) renderquestion(questioncounter)
+
+            
+        }
+    </script>
+    </body>
+    </html>
